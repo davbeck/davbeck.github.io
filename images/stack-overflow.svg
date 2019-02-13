@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="128px" height="128px" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1.1 (8761) - http://www.bohemiancoding.com/sketch -->
+    <title>stack-overflow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="stack-overflow" sketch:type="MSArtboardGroup" fill="#000000">
+            <g id="Stack-Overflow" sketch:type="MSLayerGroup" transform="translate(29.629723, 25.461717)">
+                <path d="M0.267012055,44.169338 L5.95317317,44.2254673 L5.75493883,69.7130326 L43.597061,69.7130326 L43.597061,44.3176553 L49.5887296,44.3176553 L49.5887296,75.9031498 L0.236299627,75.9031498 L0.267017739,44.1693471 L0.267012055,44.169338 Z" id="path2830" sketch:type="MSShapeGroup"></path>
+                <rect id="rect3604" sketch:type="MSShapeGroup" x="9.04347826" y="59.8226601" width="29.6429934" height="6.34884367"></rect>
+                <rect id="rect3606" sketch:type="MSShapeGroup" transform="translate(24.371418, 52.467005) rotate(5.512716) translate(-24.371418, -52.467005) " x="9.47108394" y="49.213223" width="29.8006689" height="6.50756474"></rect>
+                <rect id="rect3606-1" sketch:type="MSShapeGroup" transform="translate(25.788462, 42.173664) rotate(15.761041) translate(-25.788462, -42.173664) " x="10.8881277" y="38.919882" width="29.800669" height="6.50756476"></rect>
+                <rect id="rect3606-1-3" sketch:type="MSShapeGroup" transform="translate(31.251823, 31.262315) rotate(31.132046) translate(-31.251823, -31.262315) " x="16.3514885" y="28.0085328" width="29.800669" height="6.50756474"></rect>
+                <rect id="rect3606-1-3-7" sketch:type="MSShapeGroup" transform="translate(41.236063, 20.550566) rotate(54.378581) translate(-41.236063, -20.550566) " x="26.3357287" y="17.2967833" width="29.800669" height="6.50756476"></rect>
+                <rect id="rect3606-1-3-7-6" sketch:type="MSShapeGroup" transform="translate(53.712998, 15.036242) rotate(80.513809) translate(-53.712998, -15.036242) " x="38.8126639" y="11.7824593" width="29.800669" height="6.50756474"></rect>
+            </g>
+            <path d="M64,0 C28.6537143,0 0,28.6537143 0,64 C0,99.3462857 28.6537143,128 64,128 C99.3462857,128 128,99.3462857 128,64 C128,28.6537143 99.3462857,0 64,0 L64,0 L64,0 Z M64,123.428571 C31.1794286,123.428571 4.57142857,96.8205714 4.57142857,64 C4.57142857,31.1794286 31.1794286,4.57142857 64,4.57142857 C96.8205714,4.57142857 123.428571,31.1794286 123.428571,64 C123.428571,96.8205714 96.8205714,123.428571 64,123.428571 L64,123.428571 L64,123.428571 Z" id="Circle" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

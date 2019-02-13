@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- <% if current_page.data.redirect %><meta http-equiv="refresh" content="0;URL=<%= current_page.data.redirect %>"><% end %> -->
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+
+    <title>{{ page.title }}</title>
+
+    <!-- <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %> -->
+
+    <link rel="stylesheet" type="text/css" href="/assets/main.css">
+    <!-- <%= stylesheet_link_tag "application" %> -->
+  </head>
+
+  <body class="<%= page_classes %>">
+    <header>
+        <a class="content" href="/">
+            <img class="profile_pic" src="//s.gravatar.com/avatar/6b787e1e1ce6ec3d32d119c20cd7ef19?s=200" width="200" height="200">
+            <h1>David Beck</h1>
+            <p>Husband, Father, Software developer, Geek, Fun guy</p>
+        </a>
+    </header>
+    <main>
+        <div class="content">
+            {{ content }}
+        </div>
+    </main>
+  </body>
+</html>

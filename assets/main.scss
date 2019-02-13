@@ -1,0 +1,209 @@
+---
+---
+
+@import url(//fonts.googleapis.com/css?family=Josefin+Sans:300,600,300italic,600italic|Lobster);
+
+body {
+  margin: 0px;
+  padding: 0px;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+}
+
+main p {
+  font-size: 20px;
+}
+
+.content {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  display: block;
+}
+
+a.content,
+a.content:hover,
+a.content:active {
+  text-decoration: none;
+  color: white;
+}
+
+.content:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+header {
+  background: #ab0015;
+  color: white;
+  border-bottom: solid 5px #880010;
+  font-size: 2em;
+}
+
+header h1 {
+  margin-top: 0.5em;
+  margin-bottom: 0px;
+}
+
+header p {
+  margin: 0px;
+}
+
+.profile_pic {
+  border-radius: 50%;
+  margin-bottom: -50px;
+  margin-left: -50px;
+  border: solid 5px #880010;
+  float: left;
+}
+
+@media screen and (max-width: 600px) {
+  .profile_pic {
+    margin-bottom: 0px;
+  }
+
+  header p {
+    clear: both;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lobster", cursive;
+}
+
+a {
+}
+
+a:hover {
+  color: #ab0015;
+}
+
+a:active {
+  color: #880010;
+}
+
+.edit {
+  color: black;
+  float: right;
+  font-size: 1.5em;
+  text-decoration: none;
+  display: inline-block;
+  border: solid 2px;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+img.app-store {
+  float: right;
+  display: block !important;
+  margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+  img.app-store {
+    float: left;
+    display: block !important;
+    margin: auto;
+  }
+}
+
+
+label {
+  display: block;
+}
+
+input[type="text"] {
+  font-size: 2em;
+  line-height: 1.5em;
+  border: solid 1px gray;
+  border-radius: 5px;
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  img.screenshot {
+    float: none !important;
+    display: block !important;
+    margin: auto;
+  }
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.links_group {
+  margin-right: -96px;
+  font-size: 0px;
+
+  .link, .app-link {
+    display: inline-block;
+    width: 128px;
+    text-align: center;
+    margin-right: 96px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  .link {
+    color: black;
+
+    .icon svg * {
+      fill: black;
+    }
+
+    &:hover {
+      color: #ab0015;
+      .icon svg * {
+        fill: #ab0015;
+      }
+    }
+
+    &:active {
+      color: #880010;
+      .icon svg * {
+        fill: #880010;
+      }
+    }
+  }
+}
+
+blockquote {
+	border-left: solid 5px lightgray;
+	margin-left: 25px;
+	padding-left: 25px;
+}
+
+.blog-date {
+	font-weight: bold;
+	font-size: 1.2em;
+	color: darkgray;
+}
+
+.blog-article img {
+  margin: auto;
+  display: block;
+  width: 80%;
+}
+
+.side-note {
+	display: block;
+	margin-left: 50px;
+	padding: 10px;
+	background: rgba(0,0,0,0.1);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 5px;
+	color: rgba(0,0,0,0.7);
+}
