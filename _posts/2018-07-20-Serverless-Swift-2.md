@@ -3,6 +3,8 @@ layout: post
 title: Swift on the server... without the server (Part 2)
 date: 2018-07-20
 tags: [Swift, Serverless]
+redirect_from:
+  - /blog/2018/07/20/Serverless-Swift-2.html.html
 ---
 
 In [part 1](/blog/2018/07/13/Serverless-Swift.html.html), I outlined why Serverless architecture, and Lambda in particular, could be a really great solution for "server side" Swift, and how to get the bare minimum of a hello world example working. But it takes more than getting a process to run to use Swift as a backend. In part 2, I'd like to build on that work and work towards a more production ready environment.

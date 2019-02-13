@@ -3,6 +3,8 @@ layout: post
 title: Supporting GIFs in iOS
 date: 2016-06-23
 tags: [iOS, UIKit, NSFileAttachment, GIF]
+redirect_from:
+  - /blog/2016/06/23/Supporting-GIFs-in-iOS.html.html
 ---
 
 A few weeks ago I got a bug report from my tester. I quote: "Animated GIFs don't animate. This is inconsistent with the web experience—and it's just not *fun*." We definitely want our app to be fun! But we never really built animated GIF support into our web app. It just kind of happened. If you display a GIF on a web browser, it's going to animate it. It's just what it does. It would be harder to keep them from animating.

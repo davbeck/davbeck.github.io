@@ -3,6 +3,8 @@ layout: post
 title: Swift on the server... without the server
 date: 2018-07-13
 tags: [Swift, Serverless]
+redirect_from:
+  - /blog/2018/07/13/Serverless-Swift.html.html
 ---
 
 ### A guide to using Swift with AWS Lambda

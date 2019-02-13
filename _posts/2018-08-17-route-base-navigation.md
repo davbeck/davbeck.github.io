@@ -3,6 +3,8 @@ layout: post
 title: Using URLs, paths and routes for navigation in an iOS app
 date: 2018-08-17
 tags: [iOS]
+redirect_from:
+  - /blog/2018/08/17/route-base-navigation.html.html
 ---
 
 Many of our apps are mirrors, at least at some level, of a website. The interface might use iOS or Android specific UI or layout that is optimized for smaller screens, but the data the user is interacting with is the same accross platforms. Navigation for these 2 platforms however are fairly different. On the web you rely on the browsers back button heavily. In iOS you might use a navigation controller or a cancel button on a modal, but you have to be intentional about how things are presented and intentional about rolling back those transitions. For instance, if you just kept pushing modal view controllers on top of each other to go back to "home", you would end up with a large stack of views and view controllers all taking up memory indefinitely.

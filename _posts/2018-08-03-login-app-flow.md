@@ -3,6 +3,8 @@ layout: post
 title: Managing login and authentication for iOS
 date: 2018-08-03
 tags: [Swift, iOS]
+redirect_from:
+  - /blog/2018/08/03/login-app-flow.html.html
 ---
 
 For many if not most apps these days, some kind of login and authentication is required. Ideally your app should have some kind of benefit without an account. Something to give users value before they make the commitment of creating an account, but for some services that just isn't possible.

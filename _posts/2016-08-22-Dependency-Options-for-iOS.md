@@ -3,6 +3,8 @@ layout: post
 title: Dependency Options for iOS apps
 date: 2016-08-22
 tags: [iOS]
+redirect_from:
+  - /blog/2016/08/22/Dependency-Options-for-iOS.html.html
 ---
 
 Many languages today either come with a full featured dependency manager, or have a canonical one that everyone uses and is supported universally. A dependency manager does the work of downloading and integrating any dependencies (3rd party libraries/frameworks) including dependencies of those dependencies. Unfortunately, Apple doesn't seem to accept the existence of 3rd party code[^1]. This has led to several options for incorporating external code into a project. I have personally used all of these options in shipping apps[^2].

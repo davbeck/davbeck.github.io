@@ -3,6 +3,8 @@ layout: post
 title: Why you should break up your api endpoints
 date: 2018-08-10
 tags: [API]
+redirect_from:
+  - /blog/2018/08/10/api-breakup.html.html
 ---
 
 Years ago I read [Even Faster Web Sites: Performance Best Practices for Web Developers by Steve Souders](https://www.amazon.com/Even-Faster-Web-Sites-Performance/dp/0596522304). It was a simpler time, and the best practices for web development were still being figured out. Almost 10 years later, the advice here seems obvious. Our tools take these practices for granted and impliment them by default. For instance, the idea of bundling all of your JS and CSS into single files for the entire site. It might not be obvious, but if one page uses JS file 1 and 2, and another page uses JS file 2 and 3, the best choice in most cases is to combine all the JS files into a single file and request it on ever single page. That's how Rails and Webpack, along with many other tools work out of the box.
