@@ -32,7 +32,9 @@ plugins:
   - jekyll-feed
   - jekyll-redirect-from
 gems:
-  - jekyll-redirect-from
+  - jekyll-inline-svg
+svg:
+  optimize: true
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
