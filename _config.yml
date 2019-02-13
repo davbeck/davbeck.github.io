@@ -24,6 +24,10 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: davbeck
 github_username:  davbeck
 permalink: pretty
+collections:
+  posts:
+    output: true
+    permalink: /:collection/:year-:month-:day-:slug
 
 # Build settings
 highlighter: rouge
