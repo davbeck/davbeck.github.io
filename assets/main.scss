@@ -207,16 +207,17 @@ blockquote {
 	display: block;
 	margin-left: 50px;
 	padding: 10px;
-	background: rgba(0,0,0,0.1);
-	border: 1px solid rgba(0,0,0,0.3);
-	border-radius: 5px;
-	color: rgba(0,0,0,0.7);
+	background: rgba(128, 0, 0, 0.05);
+  border: 3px solid rgba(80, 0, 0, 0.3);
+  border-left: 0;
+  border-right: 0;
+	color: rgba(0,0,0,0.6);
 }
 
 
 
 // https://github.com/aahan/pygments-github-style/blob/master/jekyll-github.css
-.highlight pre { overflow-x: scroll; }
+.highlight pre { overflow-x: scroll; font-size: 17px; }
 .highlight pre, pre, .highlight .hll { background-color: #f8f8f8; border: 1px solid #ccc; padding: 6px 10px; border-radius: 3px; }
 .highlight .c { color: #999988; font-style: italic; }
 .highlight .err { color: #a61717; background-color: #e3d2d2; }
