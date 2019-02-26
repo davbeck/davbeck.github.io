@@ -104,7 +104,7 @@ If you run those migrations and try the app out at this point (see the [`authent
 
 However, we still have our original problem, which is that everyone is sharing a single todo list. Anyone can create an account, and from there anyone has access to everyone else's todo items. This is the difference between authentication and authorization.
 
-In order to authenticate access to specific resources, we will use [row level security](https://www.postgresql.org/docs/current/ddl-rowsecurity.html). But first, we need to mark todo items with their user:
+In order to authorize access to specific resources, we will use [row-level security](https://www.postgresql.org/docs/current/ddl-rowsecurity.html). But first, we need to mark todo items with their user:
 
 ```sql
 CREATE SCHEMA app_hidden;
@@ -178,7 +178,7 @@ COMMENT ON COLUMN app.todo.user_id IS E'@omit create,update';
 You can add additional comments that will appear in the schema and GraphiQL by adding a second line like `@omit create,update\nThe primary identifier.`.
 </span>
 
-It's important to remember that these are appliced at the Graphile level, and are not strictly enforced. That being said, it helps to create a clean, unified interface to the api.
+It's important to remember that these are applied at the Graphile level, and are not strictly enforced. That being said, it helps to create a clean, unified interface to the api.
 
 ---
 
