@@ -155,6 +155,10 @@ CREATE POLICY delete_todo ON app.todo FOR DELETE TO todo_user
  USING (user_id = app_hidden.current_user_id());
 ```
 
+<span class="side-note">
+Alternatively, if all your policies use the same restrictions like they do here, you can set all 4 CRUD policies with `CREATE POLICY all_own ON app.todo FOR ALL TO todo_user USING (user_id = app_hidden.current_user_id());`. Other times you might have different rules for different operations. A blog for instance would allow anyone to `SELECT` but only the author or admin to update.
+</span>
+
 With that, the api is secure. You have to have an account to access todo items, you can only see your own todo items, you can only create todos that are assigned to you (and that gets set automatically), you can only update your own items (and you can't change a user_id to or from someone else's), and you can only delete your own items.
 
 ## Cleaning up the api
