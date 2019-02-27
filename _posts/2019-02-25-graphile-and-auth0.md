@@ -179,13 +179,13 @@ Graphile has an option `ignoreRBAC` (ignore role-based access control) which is 
 In a Postgres console:
 
 ```sql
-CREATE ROLE todo_graphile LOGIN PASSWORD 'password';
+CREATE ROLE todo_graphile LOGIN NOINHERIT PASSWORD 'password';
 ```
 
 Or in a terminal shell:
 
 ```sh
-psql -c "CREATE ROLE todo_graphile LOGIN PASSWORD 'password';"
+psql -c "CREATE ROLE todo_graphile LOGIN NOINHERIT PASSWORD 'password';"
 ```
 
 We don't want to put this in a migration because on a production server, we would want to give this role a very long and secure password.
