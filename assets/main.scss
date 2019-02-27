@@ -24,7 +24,8 @@ main p {
 
 a.content,
 a.content:hover,
-a.content:active {
+a.content:active,
+a.content:visited{
   text-decoration: none;
   color: white;
 }
@@ -82,6 +83,13 @@ h6 {
 }
 
 a {
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: rgba(82, 0, 10, 0.3);
+}
+
+a:visited {
+  color: black;
 }
 
 a:hover {
