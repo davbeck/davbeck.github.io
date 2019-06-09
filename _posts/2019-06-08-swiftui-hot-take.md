@@ -19,6 +19,10 @@ This is clearly only something Apple can do. Sure, theoretically Swift Evolution
 
 The actual engine that renders views is versitile enough to render even the smallest details of a UI. But the views that Apple has built in are all generic abstractions. That makes it great for hight level abstractions that can be adapted to multiple platforms. It makes it a little more difficult to fine tune your UI. Will your view render a UILabel or an NSMenuItem? You're not suppose to know. We'll see where this goes.
 
+## The integration points are interesting
+
+You can embed a UI/NSView or a UI/NSViewController anywhere in your view hierarchy. On the other side, you can embed SwiftUI in an UI/NSViewController and NSView, but not UIView. I wonder if that's for performance reasons or a "political" reason. I imagine that since view controllers aren't as popular on Mac, that they may have been somewhat forced to support NSView.
+
 ## There are going to be things that are hard
 
 Reactive programming is really useful and powerful, but there are still interactions that are easier to do with imperitive code. Even more so, it's going to be a big shift in how we think about rendering UI.
