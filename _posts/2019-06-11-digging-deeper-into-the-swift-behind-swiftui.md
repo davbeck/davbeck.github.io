@@ -114,6 +114,10 @@ I would think that wouldn't work, but it does. `TextField` takes a `Binding`, bu
 
 How does this work? I don't know. `State` does conform to a protocol, [`BindingConvertible`](https://developer.apple.com/documentation/swiftui/bindingconvertible), but how this gets translated into a `Binding` is a mystery to me. It's behavior kind of reminds me of [_ObjectiveCBridgeable](https://swiftdoc.org/v1.2/protocol/_objectivecbridgeable/), but there might be a less magical explenation.
 
+### 6/14/19 Update
+
+Turns out this is implimented using a [wrapperValue](https://github.com/apple/swift-evolution/blob/master/proposals/0258-property-wrappers.md#delegating-access-to-the-storage-property). Property wrappers can optionally change what gets returned when you call the wrapper. I really do not like this part of the proposal (and it seems others in Swift Evolution agree). I can't think of another use for it outside of SwiftUI and it is very confusing IMHO. It of course makes the demos of SwiftUI cleaner, but at the cost of making them harder to understand.
+
 ## Generated initializers and wrappers
 
 Speaking of init params, let's define our own views with bindings:
