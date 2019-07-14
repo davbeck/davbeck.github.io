@@ -13,17 +13,17 @@ I have a library called [ImageIO.Swift](https://github.com/davbeck/ImageIOSwift)
 I've been thinking of changing the name of this library. Originally the idea was that it would be a lightweight wrapper around Image I/O similar to the way GCD gets adapted into a more friendly Swift interface. However the feature that I use the most is the image source view, which handles downloading and animating images. There is no equivalent in Image I/O. If you have any suggestions, let me know.
 </span>
 
-If you're just interested in using the library, check out the [beta 1.0.0 release](https://github.com/davbeck/ImageIOSwift/tree/1.0.0). To learn more about how the SwiftUI integration was implimented, read on!
+If you're just interested in using the library, check out the [beta 1.0.0 release](https://github.com/davbeck/ImageIOSwift/tree/1.0.0). To learn more about how the SwiftUI integration was implemented, read on!
 
 ---
 
-The simplest way to display an image source in SwiftUI would be to use a [UIViewRepresentable](https://developer.apple.com/documentation/swiftui/uiviewrepresentable) view and just wrap the existing UIView implimentation of `ImageSourceView`. That would have been pretty quick and simple. But who wants that!
+The simplest way to display an image source in SwiftUI would be to use a [UIViewRepresentable](https://developer.apple.com/documentation/swiftui/uiviewrepresentable) view and just wrap the existing UIView implementation of `ImageSourceView`. That would have been pretty quick and simple. But who wants that!
 
-The big drawback there though is that it would only work with UIKit apps. To get the real cross platform benefit of SwiftUI, including watchOS and AppKit Mac apps, I'd need to use a more native view implimentation.
+The big drawback there though is that it would only work with UIKit apps. To get the real cross platform benefit of SwiftUI, including watchOS and AppKit Mac apps, I'd need to use a more native view implementation.
 
 ## Downloading images
 
-The first challenge I ran into with SwiftUI was handling derived state. ImageIO.Swift uses `Task`s derrived from urls to track downloading. We don't really want tasks to be replaced for fear of the download starting again.
+The first challenge I ran into with SwiftUI was handling derived state. ImageIO.Swift uses `Task`s derived from urls to track downloading. We don't really want tasks to be replaced for fear of the download starting again.
 
 We can use `@State` to get SwiftUI to track our task for us. The task isn't actually changing though, which feels weird, but is the only way I see to accomplish this.
 
@@ -49,7 +49,7 @@ struct URLImageSourceView: View {
 
 Each time `URLImageSourceView` gets evaluated, it will create a new task, but it will actually get discarded in favor of the previous state. I made some changes to the downloader to make tasks lazy, similar to the way `URLSession` tasks work. So creating extra tasks that get thrown out immediately shouldn't be a performance issue.
 
-That's how we can maintain a derrived state, but if the url changes, we actually want to reset the task and track a new one. That's what [`id(url)`](https://developer.apple.com/documentation/swiftui/view/3278578-id) does. When the value you pass to `id` changes, it will reset any state.
+That's how we can maintain a derived state, but if the url changes, we actually want to reset the task and track a new one. That's what [`id(url)`](https://developer.apple.com/documentation/swiftui/view/3278578-id) does. When the value you pass to `id` changes, it will reset any state.
 
 Note that we don't need to worry about something like `@ObjectBinding` here because the changes to a task are primarily in it's `imageSource`. That gets created immediately and updated as data becomes available. We can bind to that instead.
 
@@ -99,7 +99,7 @@ struct AnimatedImageSourceView: View {
 }
 ```
 
-We don't need to worry about this being re-created. It is a struct with only one variable. It only does work when it gets subscribed to, and then all of it's state is tracked within a subscription object, which SwiftUI keeps track of.
+We don't need to worry about this being re-created. It is a struct with only one variable. It only does work when it gets subscribed to, and then all of its state is tracked within a subscription object, which SwiftUI keeps track of.
 
 This is something that is a little hard for me to wrap my head around, but based on [this forum post](https://forums.swift.org/t/a-uicontrol-event-publisher-example/26215/9) I think is the right way to think about publishers. The actual publisher is just a template for a subscription, which then manages the state and triggers work to be done.
 
@@ -118,9 +118,9 @@ Image(cgImage, scale: 1, label: Text(""))
              anchor: .center)
 ```
 
-That's all that's needed for half of the orientations (1-4). But the other half actually involve a 90° rotation left or right. This actually changes the frame of the image from portrait to landscape or vice versa. Here's where it gets tricky. SwiftUI has a [`rotationEffect`](https://developer.apple.com/documentation/swiftui/image/3269732-rotationeffect) modifier, but it doesn't effect it's bounding box. So if you had a landscape image that was rotated into portrait and you set it's width to 200 pixels, it would actually be smaller than expected because the bounding box would be set to that width, and the the image rotated.
+That's all that's needed for half of the orientations (1-4). But the other half actually involve a 90° rotation left or right. This actually changes the frame of the image from portrait to landscape or vice versa. Here's where it gets tricky. SwiftUI has a [`rotationEffect`](https://developer.apple.com/documentation/swiftui/image/3269732-rotationeffect) modifier, but it doesn't effect its bounding box. So if you had a landscape image that was rotated into portrait and you set its width to 200 pixels, it would actually be smaller than expected because the bounding box would be set to that width, and the the image rotated.
 
-I came up with an interesting solution to this: using [`overlay`](https://developer.apple.com/documentation/swiftui/view/3278622-overlay) to place the actual image above a placeholder view. Using the image source's size as a prefered frame:
+I came up with an interesting solution to this: using [`overlay`](https://developer.apple.com/documentation/swiftui/view/3278622-overlay) to place the actual image above a placeholder view. Using the image source's size as a preferred frame:
 
 ```swift
 struct ImageSourceBase: View {
@@ -161,13 +161,13 @@ struct StaticImageSourceView: View {
 }
 ```
 
-While the image source is available immediately from the download task, it doesn't necessarily have enough data to render anything, or even know what size it is. I struggled a big to figure out how to conditionally show and hide the image when it wasn't available. But, as it turns out, an optional `View` is itself a valid `View` thanks to conditional conformance. When it's nil, nothing will be shown, when it's non-nil, it will be shown.
+While the image source is available immediately from the download task, it doesn't necessarily have enough data to render anything, or even know what size it is. I struggled a big to figure out how to conditionally show and hide the image when it wasn't available. But, as it turns out, an optional `View` is itself a valid `View` thanks to conditional conformance. When its nil, nothing will be shown, when it's non-nil, it will be shown.
 
 ## Resizable? 🤷🏽‍♂️
 
 Another thing you might notice in that code snippet is that I'm marking the image as resizable. I'll be honest, I'm not sure what Apple was going for here. Views can have an "ideal" size, which seems to be equivalent to [`intrinsicContentSize`](https://developer.apple.com/documentation/uikit/uiview/1622600-intrinsiccontentsize), which is what `UIImageView` uses.
 
-However [`resizable`](https://developer.apple.com/documentation/swiftui/image/3269730-resizable) is specific to `Image`s. Most view modifiers like that return a wrapper around their origianl view, but `resizable` returns a plain `Image`. This means that it must be the first in a chain of modifiers:
+However [`resizable`](https://developer.apple.com/documentation/swiftui/image/3269730-resizable) is specific to `Image`s. Most view modifiers like that return a wrapper around their original view, but `resizable` returns a plain `Image`. This means that it must be the first in a chain of modifiers:
 
 ```swift
 // this won't compile
@@ -184,7 +184,7 @@ Image("foo")
 
 It also means that we can't easily wrap an `Image` and maintain the ability to mark it as resizable or not.
 
-Until I undersand the purpose of this more, I'm always including it, because as far as I can tell, that's what you would always want. For icons it's perhaps more useful to have a fixed size, but images sources are primarily used for other types of images.
+Until I understand the purpose of this more, I'm always including it, because as far as I can tell, that's what you would always want. For icons its perhaps more useful to have a fixed size, but images sources are primarily used for other types of images.
 
 ## Packaging it all up
 
@@ -194,7 +194,7 @@ For Apple's other frameworks like MapKit, this hasn't been an issue in the past 
 
 That's great for Apple, but for existing Swift native frameworks like ImageIO.Swift, we are already using non-prefixed classes. The natural name for the SwiftUI view here would be `ImageSourceView`. But that's exactly what I'm already using for the `UIView` subclass.
 
-After some deliberation, I decided to break up the library into several packages/podspecs. ImageIOUIKit has all the UIKit adaptations, including an `ImageSourceView`, which is a subclass of `UIView`. Meanwhile, `ImageIOSwiftUI` includes a `SwiftUI.View` implimentation of `ImageSourceView`. And technically these can be used together with their full namespace: `ImageIOSwiftUI.ImageSourceView` and `ImageIOUIKit.ImageSourceView`. But I think most people will end up only using one or the other.
+After some deliberation, I decided to break up the library into several packages/podspecs. ImageIOUIKit has all the UIKit adaptations, including an `ImageSourceView`, which is a subclass of `UIView`. Meanwhile, `ImageIOSwiftUI` includes a `SwiftUI.View` implementation of `ImageSourceView`. And technically these can be used together with their full namespace: `ImageIOSwiftUI.ImageSourceView` and `ImageIOUIKit.ImageSourceView`. But I think most people will end up only using one or the other.
 
 ---
 
@@ -218,4 +218,4 @@ ImageSourceView(imageSource: imageSource, isAnimationEnabled: true, label: Text(
 
 I'm including this integration in a [1.0.0](https://github.com/davbeck/ImageIOSwift/tree/1.0.0) update I'm planning on releasing in the Fall after the Xcode GM is available, but in the meantime you can give it a try in your own SwiftUI apps using SwiftPM.
 
-There has been quit a bit of talk about [some additional api in Image I/O](https://developer.apple.com/documentation/imageio/3333271-cganimateimageaturlwithblock) that supposedly adds support for animated images. It is currently undocumented and unavailable in Swift (not to mention it's iOS 13 only). It will be interesting to see if it's using any special tricks when it's finally available, but for now, ImageIO.Swift has got your back!
+There has been quit a bit of talk about [some additional api in Image I/O](https://developer.apple.com/documentation/imageio/3333271-cganimateimageaturlwithblock) that supposedly adds support for animated images. It is currently undocumented and unavailable in Swift (not to mention its iOS 13 only). It will be interesting to see if it is using any special tricks when it's finally available, but for now, ImageIO.Swift has got your back!
