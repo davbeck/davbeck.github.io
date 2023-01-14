@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Trunk Dev Notes #1
+title: "Trunk Dev Notes #1"
 date: 2023-01-14
 tags: [SwiftUI,Trunk,iOS]
 ---
