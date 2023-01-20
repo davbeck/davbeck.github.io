@@ -140,12 +140,10 @@ input[type="text"] {
   width: 100%;
 }
 
-@media screen and (max-width: 500px) {
-  img.screenshot {
-    float: none !important;
-    display: block !important;
-    margin: auto;
-  }
+img.screenshot {
+  float: none !important;
+  display: block !important;
+  margin: auto;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
