@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Trunk Dev Notes #3"
+title: "Trunk Dev Notes #3: CI Servers, Cleanup, and Fullscreen Images"
 date: 2023-01-29
 tags: [Trunk,iOS]
 ---
