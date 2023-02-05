@@ -2,7 +2,7 @@
 layout: post
 title: "Trunk Dev Notes #2"
 date: 2023-01-17
-tags: [Trunk,iOS]
+tags: [Trunk,ThinkSocial,iOS]
 ---
 
 Over the weekend I was able to get the second beta of Trunk to a place where I was ready to release it. I wanted to get it to a point where the concept of the app was well represented, which meant a fully functional timeline.

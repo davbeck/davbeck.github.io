@@ -2,7 +2,7 @@
 layout: post
 title: "Trunk Dev Notes #3: CI Servers, Cleanup, and Fullscreen Images"
 date: 2023-01-29
-tags: [Trunk,iOS]
+tags: [Trunk,ThinkSocial,iOS]
 ---
 
 At the beginning of last week I spent some time working on CI for Trunk. [After making big claims about having to have CI on every project I work on](https://mastodon.social/@davbeck/109530813220759111), my workflow has been broken for several weeks. It’s admittedly hard to take time away from actually building something to setup support tools.
