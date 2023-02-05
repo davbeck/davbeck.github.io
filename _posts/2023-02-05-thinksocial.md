@@ -5,7 +5,7 @@ date: 2023-02-05
 tags: [ThinkSocial,Trunk,Mastodon,iOS]
 ---
 
-<img alt="What would you say ya do here?" src="/images/2019-02-12-graphile/do_here.jpg" width="200" height="200" style="float: left;" />
+<img alt="ThinkSocial App Icon" src="/images/2023-02-05-thinksocial/thinksocial-icon.svg" width="200" height="200" style="float: left; width: 200px; margin-right: 20px; margin-bottom: 20px;" />
 
 Trunk, the Mastodon app for iOS with a unique horizontal timeline is now ThinkSocial for Mastodon.
 
