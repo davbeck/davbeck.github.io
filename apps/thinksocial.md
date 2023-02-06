@@ -20,7 +20,7 @@ better engagement and more focus on each individual post.
 The app is still missing critical features, such as posting and notifications. 
 Because of that, I am limiting the number of beta testers. 
 As the app gets more complete I will continue to increase the number of spots 
-available so make sure to [follow me](https://mastodon.social/@davbeck) for updates.
+available so make sure to [follow me](https://tnku.co/@david) for updates.
 
 ## Roadmap
 
