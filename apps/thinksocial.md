@@ -34,7 +34,7 @@ Here's a rough picture of priorities leading up to that release.
     - Fullscreen image viewing
     - Custom emoji
     - Media preloading
-- Alternate timelines ⬅️ You are here
+- Alternate timelines
     - Federated and local timelines
     - Lists
 - Navigation
@@ -42,7 +42,7 @@ Here's a rough picture of priorities leading up to that release.
     - Handle mastodon links within the app
     - Open links in the app with settings to customize
     - Detail screens for things like bookmarks and who boosted a post
-- Posting and replying
+- Posting and replying ⬅️ You are here
 - Notifications
     - Push notifications
     - I'm hoping to impliment some advanced filtering, especially across accounts, but this may get cut for 1.0.
