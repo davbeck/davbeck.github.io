@@ -64,7 +64,7 @@ Multiplexed over QUIC
 
 ### Cancellation
 
-Doesn’t always work
+Doesn’t always work — you are racing against the request it's trying to cancel
 
 - HTTP/1 can close the TCP connection
 - HTTP/2 will send a cancel message but it will probably get trapped in the traffic jam
@@ -103,7 +103,7 @@ The time is now
 
 ## Send less stuff
 
-<img src="/images/2026-04-14-deepdishswift/Speedtest.png" alt="Speed Test" style="float: right; width: 200px; height: 412px; padding-left: 50px" />
+<img src="/images/2026-04-14-deepdishswift/Speedtest.png" alt="Speed Test" class="side" style="width: 200px; height: 412px" />
 
 It adds up
 
