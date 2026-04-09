@@ -26,6 +26,8 @@ collections:
     output: true
     permalink: /:collection/:year-:month-:day-:slug
 
+future: true
+
 # Build settings
 highlighter: rouge
 markdown: kramdown
