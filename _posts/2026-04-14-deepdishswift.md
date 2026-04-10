@@ -92,15 +92,6 @@ Know what to fix
 - Have tracing in place ([Sentry](https://sentry.io/welcome/), [TelemetryDeck](https://telemetrydeck.com/) etc.) but be careful
 - Use [URLSessionTaskMetrics](https://developer.apple.com/documentation/foundation/urlsessiontaskmetrics) for accurate measurements
 
-## Adopt HTTP/3
-
-The time is now
-
-- Nearly every CDN now supports it — but you probably will need a CDN
-- Networks may still downgrade to TCP — but getting better
-- If you know your server uses HTTP/3, turn on [assumesHTTP3Capable](https://developer.apple.com/documentation/foundation/urlrequest/assumeshttp3capable)
-- S3 still only supports HTTP/1
-
 ## Send less stuff
 
 <img src="/images/2026-04-14-deepdishswift/Speedtest.png" alt="Speed Test" class="side" style="width: 200px; height: 412px" />
@@ -117,15 +108,13 @@ A pretty typical speed test will show a usable download speed, but the upload is
   - Avoid large headers that change often
 - Compress request bodies if you send lots of JSON
 
-## Idempotence
+## Prioritize
 
-Understand what can be retried
+Do it in advance
 
-Idempotent (adj.) — Describing an operation that can be performed multiple times with the same input without changing the result beyond the first application.
-
-URLSession will automatically resend GET, HEAD, PUT, DELETE
-
-**Make everything idempotent** — you never know what made it to the server
+- By the time you want to send a high priority request, it’s too late
+- [URLSessionTask.priority](https://developer.apple.com/documentation/foundation/urlsessiontask/priority) doesn’t do much
+- Consider artificially limiting low priority requests
 
 ## Detecting low connectivity
 
@@ -156,13 +145,24 @@ Many backend engineers will resist adopting persistent connections like WebSocke
 - You don’t need permission for data only notifications in the foreground
 - But if you do use push alerts don’t ignore the content — an app can receive a notification but not be able to connect to its own server
 
-## Prioritize
+## Idempotence
 
-Do it in advance
+Understand what can be retried
 
-- By the time you want to send a high priority request, it’s too late
-- [URLSessionTask.priority](https://developer.apple.com/documentation/foundation/urlsessiontask/priority) doesn’t do much
-- Consider artificially limiting low priority requests
+Idempotent (adj.) — Describing an operation that can be performed multiple times with the same input without changing the result beyond the first application.
+
+URLSession will automatically resend GET, HEAD, PUT, DELETE
+
+**Make everything idempotent** — you never know what made it to the server
+
+## Adopt HTTP/3
+
+The time is now
+
+- Nearly every CDN now supports it — but you probably will need a CDN
+- Networks may still downgrade to TCP — but getting better
+- If you know your server uses HTTP/3, turn on [assumesHTTP3Capable](https://developer.apple.com/documentation/foundation/urlrequest/assumeshttp3capable)
+- S3 still only supports HTTP/1
 
 ## Designing for low connectivity
 
