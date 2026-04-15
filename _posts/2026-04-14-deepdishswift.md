@@ -2,9 +2,12 @@
 layout: post
 title: "Deep Dish Swift 2026 - Surviving in Low Connectivity"
 date: 2026-04-14
-hidden: true
-tags: [Low Connectivity]
+tags: [Low Connectivity, Deep Dish Swift]
 ---
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+  <iframe src="https://www.youtube.com/embed/-m5h2jXPp54?start=4145&end=6369" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
 I was lucky enough to be selected to talk at Deep Dish Swift 2026. The following is the contents from my slides.
 
